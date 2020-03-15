@@ -1,8 +1,15 @@
 body {
     background-color: #FFB6C1;
 }
+
 #page {
     text-align: center;
     font-size: 250%;
     font-family: Arial, Helvetica, sans-serif
+}
+
+#timer {
+    font-size: 130%;
+    margin-top: 1px;
+    margin-bottom: 1px;
 }
