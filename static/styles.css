@@ -1,5 +1,7 @@
-#page {
+body {
     background-color: #FFB6C1;
+}
+#page {
     text-align: center;
     font-size: 250%;
 }
