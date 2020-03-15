@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Pog</title>
+    <link rel="stylesheet" href = "static/styles.css">
+</head>
+
+<body style="background-color: #FFB6C1;">
+    <div id = "page">
+        <img src="gifs/darian1.gif" height = 500>
+        <br>
+        mixtape drops in:
+        <b>
+            <p id="timer"></p>
+        </b>
+        CopyCenter Hellow Delylah: Ayham Eric Darian Daniel and baby yoda
+    </div>
+
+    <script>
+        var countDownDate = new Date("Jun 26, 2020 09:30:00").getTime();
+
+        var x = setInterval(function () {
+            var now = new Date().getTime();
+            var distance = countDownDate - now;
+
+            var days = Math.floor(distance / (1000 * 60 * 60 * 24));
+            var hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+            var minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+            var seconds = Math.floor((distance % (1000 * 60)) / 1000);
+
+            document.getElementById("timer").innerHTML = days + "d " + hours + "h " + minutes + "m " + seconds + "s ";
+
+            if (distance < 0) {
+                clearInterval(x);
+                document.getElementById("timer").innerHTML = "you made it";
+            }
+        }, 1000);
+    </script>
+
+</body>
+
+</html>
