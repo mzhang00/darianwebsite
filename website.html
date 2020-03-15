@@ -1,15 +1,17 @@
 <!DOCTYPE html>
 <html>
+
 <head>
     <title>8924</title>
+    <link rel="icon" href="gifs/darian1.gif" type="image/gif" sizes="16x16">
     <link rel="stylesheet" href = "static/styles.css">
 </head>
 
 <body>
-    <div id = "page">
-        <img src="gifs/darian1.gif" height = 500>
+    <div id="page">
+        <img src="gifs/darian1.gif" height=500 id="rotator">
         <br>
-       金継ぎ mixtape drops in 再生死
+        金継ぎ mixtape drops in 再生死
         <b>
             <p id="timer"></p>
         </b>
@@ -17,6 +19,28 @@
     </div>
 
     <script>
+        function start() {
+            var rotator = document.getElementById('rotator');
+            var imageDir = 'gifs/';
+            var delayInSeconds = 20;
+
+            var images = ['darian2.gif', 'darian3.gif', 'darian4.gif', 'darian5.gif', 'darian1.gif'];
+
+            var num = 0;
+            var changeImage = function () {
+                var len = images.length;
+                rotator.src = imageDir + images[num++];
+                if (num == len) {
+                    num = 0;
+                }
+            };
+            setInterval(changeImage, delayInSeconds * 1000);
+        };
+
+        window.onload = function () {
+            start();
+        }
+
         var countDownDate = new Date("Jun 26, 2020 09:30:00").getTime();
 
         var x = setInterval(function () {
@@ -38,5 +62,4 @@
     </script>
 
 </body>
-
 </html>
