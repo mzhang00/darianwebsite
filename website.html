@@ -4,10 +4,10 @@
 <head>
     <title>8924</title>
     <link rel="icon" href="gifs/darian1.gif" type="image/gif" sizes="16x16">
-    <link rel="stylesheet" href = "static/styles.css">
+    <link rel="stylesheet" href="static/styles.css">
 </head>
 
-<body>
+<body id = "body" style="background-color: #FFB6C1;">
     <div id="page">
         <img src="gifs/darian1.gif" height=500 id="rotator">
         <br>
@@ -15,39 +15,36 @@
         <b>
             <p id="timer"></p>
         </b>
-        Lo Que Siento • Mi Amor • Tú Eres Bonita 
+        Lo Que Siento • Mi Amor • Tú Eres Bonita
     </div>
 
     <script>
+        // GIF CHANGING
         function start() {
             var rotator = document.getElementById('rotator');
             var imageDir = 'gifs/';
-            var delayInSeconds = 30;
+            var delayInSeconds = 1;
 
-            var images = ['darian2.gif', 'darian3.gif', 'darian4.gif', 'darian5.gif', 
-'darian1.gif', 'darian6.gif', 'darian7.gif','darian8.gif','darian9.gif','darian10.gif',
-'darian11.webp','darian12.gif','darian13.gif','darian14.gif','darian15.gif','darian16.gif',
-'darian17.gif','darian18.gif','darian19.gif','darian19.gif','darian20.gif','darian21.gif',
-'darian22.webp','darian23.gif','darian24.gif','darian25.gif','darian26.gif','darian27.gif',
-'darian28.webp','darian29.gif','darian30.gif','darian31.gif','darian32.gif','darian33.gif',
-'darian34.gif','darian35.gif','darian36.gif','darian37.gif','darian38.gif','darian39.gif',
-'darian40.gif','darian41.gif','darian42.gif','darian42.gif'];
+            var images = ['darian2.gif', 'darian3.gif', 'darian4.gif', 'darian5.gif',
+                'darian1.gif', 'darian6.gif', 'darian7.gif', 'darian8.gif', 'darian9.gif', 'darian10.gif',
+                'darian11.webp', 'darian12.gif', 'darian13.gif', 'darian14.gif', 'darian15.gif', 'darian16.gif',
+                'darian17.gif', 'darian18.gif', 'darian19.gif', 'darian19.gif', 'darian20.gif', 'darian21.gif',
+                'darian22.webp', 'darian23.gif', 'darian24.gif', 'darian25.gif', 'darian26.gif', 'darian27.gif',
+                'darian28.webp', 'darian29.gif', 'darian30.gif', 'darian31.gif', 'darian32.gif', 'darian33.gif',
+                'darian34.gif', 'darian35.gif', 'darian36.gif', 'darian37.gif', 'darian38.gif', 'darian39.gif',
+                'darian40.gif', 'darian41.gif', 'darian42.gif', 'darian42.gif'];
 
             var num = 0;
+            var len = images.length;
+            var past = ['darian1.gif']
             var changeImage = function () {
-                var len = images.length;
-                rotator.src = imageDir + images[num++];
-                if (num == len) {
-                    num = 0;
-                }
+                num = Math.floor(Math.random() * len);
+                rotator.src = imageDir + images[num];
             };
             setInterval(changeImage, delayInSeconds * 1000);
         };
 
-        window.onload = function () {
-            start();
-        }
-
+        // COUNTDOWN TIMER
         var countDownDate = new Date("Jun 26, 2020 09:30:00").getTime();
 
         var x = setInterval(function () {
@@ -66,7 +63,29 @@
                 document.getElementById("timer").innerHTML = "you made it";
             }
         }, 1000);
+
+        // GIF CHANGING
+        function colorchange() {
+            var background = document.getElementById('body');
+            var delayInSeconds = 1;
+
+            var colors = ['#E8DEFD', '#E8FAE6', '#FDDEE9', '#B0D8E8', '#BC87C5', '#E9CCC3' ,'#F3FCFB' ,'#C1FBC8', '#C2C1FB', '#BA5E78'];
+
+            var num = 0;
+            var len = colors.length;
+            var changeColor = function () {
+                num = Math.floor(Math.random() * len);
+                background.style = "background-color: " + colors[num];
+            };
+            setInterval(changeColor, delayInSeconds * 1000);
+        };
+
+        window.onload = function () {
+            colorchange();
+            start();
+        }
     </script>
 
 </body>
+
 </html>
