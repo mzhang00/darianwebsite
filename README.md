@@ -6,6 +6,7 @@ Random
 Music 
 Colors/Random
 Host
+center on fullscreen view
 list of colors
 #E8DEFD 
 #E8FAE6 
